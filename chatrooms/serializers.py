@@ -7,4 +7,5 @@ class ChatroomSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'name',
+            'description',
         )

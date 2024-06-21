@@ -12,7 +12,8 @@ def get_chatrooms(request):
 @api_view(['POST']) # Create the chatroom in the DB
 def create_chatroom(request):
     name = request.data.get('name')
-    chatroom = Chatroom.objects.create(name=name)
+    description = request.data.get('description')
+    chatroom = Chatroom.objects.create(name=name, description=description)
     chatroom.save()
     return Response({'messages': 'created'})
 
